@@ -159,7 +159,7 @@ func main() {
 
 		elapsed := time.Since(start)
 
-		fmt.Println("version #3")
+		fmt.Println("version #4")
 		fmt.Println("length =", len(body))
 		fmt.Println("length2 =", len(body2))
 		fmt.Println("length3 =", len(body3))
@@ -196,7 +196,7 @@ func main() {
 
 		elapsed := time.Since(start)
 
-		fmt.Println("version #2")
+		fmt.Println("version #5")
 		fmt.Println("length =", len(body))
 		fmt.Println("length2 =", len(body2))
 		fmt.Println("length3 =", len(body3))
