@@ -69,6 +69,23 @@ func RequestFeatureFunc(url string) func() ([]byte, error) {
 	}
 }
 
+func Feature(f func(interface{}, error)) func() (interface{}, error) {
+	var result interface{}
+	var err error
+
+	c := make(chan struct{}, 1)
+	go func() {
+		defer close(c)
+
+		result, err = f()
+	}()
+
+	return func() (interface{}, error) {
+		<-c
+		return result, err
+	}
+}
+
 var version = flag.Int("v", 1, "version v=1")
 
 func main() {
