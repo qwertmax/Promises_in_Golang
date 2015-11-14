@@ -16,6 +16,8 @@ func RequestSimple(url string) []byte {
 }
 ```
 
+output:
+
 ```bash
 length = 30240
 length2 = 29789
@@ -52,6 +54,8 @@ func RequestFunc(url string) <-chan []byte {
 	return c
 }
 ```
+
+output:
 
 ```bash
 length = 30240
