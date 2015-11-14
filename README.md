@@ -1,6 +1,6 @@
-# Promises_in_Golang
+# Promises in Golang
 
-Simple implementation of http.Get (not a concurrent)
+##Simple implementation of http.Get (not a concurrent)
 
 ```go
 func RequestSimple(url string) []byte {
@@ -18,7 +18,7 @@ func RequestSimple(url string) []byte {
 
 output:
 
-```bash
+```shell
 length = 30240
 length2 = 29789
 length3 = 21492
@@ -29,6 +29,8 @@ length7 = 102569
 length8 = 50118
 9.428153889s
 ```
+
+## Concurrent implementation of http.Get (each in new goroutine)
 
 ```go
 func RequestFunc(url string) <-chan []byte {
@@ -57,7 +59,7 @@ func RequestFunc(url string) <-chan []byte {
 
 output:
 
-```bash
+```shell
 length = 30240
 length2 = 29789
 length3 = 21492
