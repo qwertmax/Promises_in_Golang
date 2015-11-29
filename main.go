@@ -9,6 +9,7 @@ import (
 	"time"
 )
 
+// RequestSimple - implement HTTP Request function
 func RequestSimple(url string) []byte {
 	resp, err := http.Get(url)
 	if err != nil {
@@ -21,6 +22,7 @@ func RequestSimple(url string) []byte {
 	return body
 }
 
+// RequestFunc - implement function with goroutine witch return responce into channel
 func RequestFunc(url string) <-chan []byte {
 	c := make(chan []byte, 1)
 
@@ -44,6 +46,7 @@ func RequestFunc(url string) <-chan []byte {
 	return c
 }
 
+// RequestFeatureFunc - implement function with goroutine witch return closure as responce witch return channel
 func RequestFeatureFunc(url string) func() ([]byte, error) {
 	var body []byte
 	var err error
