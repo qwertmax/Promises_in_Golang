@@ -91,5 +91,3 @@ func Feature(f func(interface{}, error)) func() (interface{}, error) {
 	}
 }
 ```
-
-
